@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 250px;
+            border: 5px solid red;
+            position: fixed;
+            left: 0;
+            bottom: -260px;
+            transition: all 3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div></div>
+    <script>
+        var d1 = document.getElementsByTagName('div')[0];
+        function show(){
+            d1.style = 'bottom:0'
+        }
+        setTimeout(show,3000);
+    </script> -->
+
+    <!-- <a href="http://www.baidu.com">baidu</a>;
+    <a href="http://www.tmooc.com">tmooc</a>;
+    <script>
+        console.log(history);
+    </script> -->
+
+    <button id='btn'>前进</button>
+    <a href="http://www.baidu.com">baidu</a>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function(){
+            history.forward()
+        }
+    </script>
+
+    <script>
+        location.href = "http://www.baidu.com";
+    </script>
+</body>
+</html>

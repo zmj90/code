@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day01.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>授课老师 ： 石博文</p>
+<p>联系方式 ： shibw@tedu.cn</p>
+<p>授课阶段 ： Web前端基础</p>
+<hr>
+<p>[TOC]</p>
+<h1 id="%E4%B8%80web%E5%89%8D%E7%AB%AF%E4%BB%8B%E7%BB%8D">一、Web前端介绍</h1>
+<h2 id="1-%E4%BB%80%E4%B9%88%E6%98%AF%E7%BD%91%E9%A1%B5">1.  什么是网页</h2>
+<p>网页是基于浏览器的应用程序，是数据展示的载体.</p>
+<h2 id="2-%E7%BD%91%E9%A1%B5%E7%9A%84%E7%BB%84%E6%88%90">2.  网页的组成</h2>
+<ol>
+<li>浏览器
+<ul>
+<li>代替用户向服务器发请求</li>
+<li>接收并解析数据展示给用户</li>
+</ul>
+</li>
+<li>服务器
+<ul>
+<li>存储数据</li>
+<li>处理并响应请求</li>
+</ul>
+</li>
+<li>协议
+<ul>
+<li>规范数据在传输过程中的打包方式</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-%E5%BC%80%E5%8F%91%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87">3.  开发前的准备</h2>
+<ol>
+<li>运行环境：浏览器，设置chrome为默认浏览器，作为网页文件的运行环境。</li>
+<li>调试工具：浏览器自带的调试工具，使用快捷键&quot;F12&quot;或右键&quot;检查&quot;打开。</li>
+<li>开发工具：不限，选用个人习惯的即可。（Sublime、VSCode、EditPlus、PyCharm等）</li>
+</ol>
+<h1 id="%E4%BA%8C-html%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D">二、 HTML语法介绍</h1>
+<h2 id="1-html%E4%BB%8B%E7%BB%8D">1.  HTML介绍</h2>
+<p>超文本标记语言（HyperText Markup Language）浏览器能够识别和解析的语言，通过标签的形式构建页面结构和填充内容</p>
+<h2 id="2-%E6%A0%87%E7%AD%BE">2. 标签</h2>
+<p>标签也称为标记或元素，用于在网页中标记内容</p>
+<ol>
+<li>
+<p>语法：标签使用&lt; &gt;为标志，标签名不区分大小写，推荐小写表示</p>
+</li>
+<li>
+<p>分类：</p>
+<ul>
+<li>双标签：成对出现，包含开始标签和结束标签。例：</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>单标签：只有开始标签，没有结束标签，可以手动添加“/”表示闭合。例：</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>标签属性：</p>
+<ul>
+<li>标签属性书写在开始标签中，使用空格与标签名隔开，用于设置当前标签的显示内容或者修饰显示效果。由属性名和属性值组成，属性值使用双引号表示。例：</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>同一个标签中可以添加若干组标签属性，使用空格间隔。例：</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"lily.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"200px"</span>&gt;</span>
+</div></code></pre>
+</li>
+</ol>
+<h2 id="3-%E4%BD%BF%E7%94%A8">3. 使用</h2>
+<ol>
+<li>创建网页文件，使用.html或.htm作为文件后缀</li>
+<li>添加网页的基本结构<pre class="hljs"><code><div><span class="hljs-meta">&lt;!doctype <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>网页标题<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+         网页主体内容
+	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>标签嵌套
+在双标签中书写其他标签，称为标签嵌套
+<ul>
+<li>嵌套结构中，外层元素称为父元素，内层元素称为子元素；</li>
+<li>多层嵌套结构中，所有外层元素统称为祖先元素，内层元素统称为后代元素</li>
+<li>平级结构互为兄弟元素</li>
+</ul>
+</li>
+<li>HTML语法规范
+<ul>
+<li>标签名不区分大小写，建议使用小写</li>
+<li>注释语法：</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- 此处为注释 --&gt;</span>
+</div></code></pre>
+</li>
+</ol>
+<h1 id="%E4%B8%89%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE%E4%BB%8B%E7%BB%8D">三、常用标签介绍</h1>
+<h2 id="1-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90">1. 基本结构解析</h2>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- 文档类型声明，便于浏览器正确解析标签及渲染样式 --&gt;</span>
+<span class="hljs-meta">&lt;!doctype <span class="hljs-meta-keyword">html</span>&gt;</span> 
+<span class="hljs-comment">&lt;!-- HTML文档开始的标志 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span> 
+  <span class="hljs-comment">&lt;!-- 头部设置，可在head中设置网页标题，网页选项卡图标，引入外部的资源文件，设置网页相关信息等 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- 设置网页标题，显示在网页选项卡上方 --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>网页标题<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- 设置网页字符编码 --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span> 
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- 网页主体部分，显示网页主要内容 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span> 
+      网页主体内容
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><span class="hljs-comment">&lt;!-- 文档结束--&gt;</span>
+</div></code></pre>
+<h2 id="2-body%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE">2. body中常用标签</h2>
+<ul>
+<li>
+<p>文本标签</p>
+<ul>
+<li>标题标签：自带加粗效果，从h1到h6字体大小逐级递减</li>
+</ul>
+<pre class="hljs"><code><div> <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>一级标题<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>二级标题<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>三级标题<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>四级标题<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>五级标题<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>六级标题<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>段落标签：</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>段落文本<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>普通文本标签：</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>行分区标签，用于对特殊文本特殊处理<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>加粗标签<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>强调标签，效果同b标签<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>普通文本标签，常与表单控件结合实现文本与控件的绑定<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>斜体标签<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span>删除线标签<span class="hljs-tag">&lt;/<span class="hljs-name">u</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>格式标签：
+浏览器会忽略代码中的换行和空格，只显示为一个空格。想要实现页面中的换行，需要借助于换行标签。</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>水平线标签，在页面中插入一条水平分割线</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>字符实体：
+某些情况下，浏览器会将一些特殊字符按照HTML的方式解析，影响显示结果。此时需要将这类字符转换为其他的形式书写
+例：</li>
+</ul>
+<pre class="hljs"><code><div> 使用 &amp;lt; 在页面中呈现 &quot;&lt;&quot;
+ 使用 &amp;gt; 在页面中呈现 &quot;&gt;&quot;
+ 使用 &amp;nbsp; 在页面中呈现一个空格
+ 使用 &amp;copy; 在页面中呈现版权符号&quot;©&quot;
+ 使用 &amp;yen; 在页面中呈现人民币符号&quot;￥&quot;
+</div></code></pre>
+</li>
+<li>
+<p>容器标签
+常用于页面结构划分，结合CSS实现网页布局</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"top"</span>&gt;</span>页面顶部区域<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span>&gt;</span>页面主体区域<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"bottom"</span>&gt;</span>页面底部区域<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>图片与超链接标签</p>
+<ul>
+<li>
+<p>图片标签 <img src="">：用于在网页中插入一张图片。</p>
+<ol>
+<li>属性 src 用于给出图片的URL，必填。</li>
+<li>属性 width/height 用于设置图片尺寸，取像素值，默认按照图片的原始尺寸显示。</li>
+<li>属性 title 用于设置图片标题，鼠标悬停在图片上时显示</li>
+<li>属性 alt 用于设置图片加载失败后的提示文本</li>
+</ol>
+<p>语法：</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">width</span>=<span class="hljs-string">""</span> <span class="hljs-attr">height</span>=<span class="hljs-string">""</span> <span class="hljs-attr">title</span>=<span class="hljs-string">""</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>超链接标签：用户可以点击超链接实现跳转至其他页面
+<ol>
+<li>属性 href 用于设置目标文件的URL，必填。</li>
+<li>属性 target用于设置目标文件的打开方式，默认在当前窗口打开。可以设置新建窗口打开目标文本(取&quot;_blank&quot;)</li>
+</ol>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://www.taobao.com"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_self"</span>&gt;</span>淘宝<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://www.baidu.com"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>百度<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</div></code></pre>
+</li>
+</ul>
+<h2 id="3-%E5%B8%B8%E7%94%A8%E7%BB%93%E6%9E%84%E6%A0%87%E7%AD%BE">3. 常用结构标签</h2>
+<ul>
+<li>
+<p>列表标签</p>
+<ul>
+<li>有序列表（ordered list）
+默认使用阿拉伯数字标识每条数据</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>list item 列表项<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span> 
+   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>list item 列表项<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>list item 列表项<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>无序列表（unordered list）
+默认使用实心圆点标识列表项</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+ 	<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>list item 列表项<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span> 
+ 	<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>list item 列表项<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+ 	<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>list item 列表项<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>列表嵌套
+在已有列表中嵌套添加另一个列表，常见于下拉菜单</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+   	西游记
+   	<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+   		<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>孙悟空<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+   		<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>孙悟空<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+   		<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>孙悟空<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+   	<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>表格标签</p>
+<ul>
+<li>表格由行和单元格组成，常用于直接的数据展示或辅助排版,基本结构如下</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- 创建表格标签 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+	 <span class="hljs-comment">&lt;!-- 创建行标签 --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 行中创建单元格以显示数据 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>姓名<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>年龄<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>班级<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>迪丽热巴<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>20<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>002<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>
+<p>单元格合并：用于调整表格结构，分为跨行合并和跨列合并，合并之后需要删除被合并的单元格，保证表格结构完整</p>
+<table>
+<thead>
+<tr>
+<th>单元格属性</th>
+<th>作用</th>
+<th>取值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>colspan</td>
+<td>跨列合并单元格</td>
+<td>无单位数值</td>
+</tr>
+<tr>
+<td>rowspan</td>
+<td>跨行合并单元格</td>
+<td>无单位数值</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>行分组标签：可以将表格中的若干行划分为一组，表示表头，表尾及表格主体，默认在表格中创建的所有行都会被自动加入表格主体中</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">"1px"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300px"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tfoot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tfoot</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>表单标签
+表单用于采集用户的信息并提交给服务器，由表单元素和表单控件组成。表单元素form负责提交数据给服务器，表单控件负责收集数据。</p>
+<ul>
+<li>表单使用<form></form>
+| 属性名  | 取值                                                         |
+| ------- | ------------------------------------------------------------ |
+| action  | 设置数据的提交地址                                           |
+| method  | 设置数据的提交方式，默认为get方式，可以设置为post            |
+| enctype | 设置数据的编码类型，涉及二进制数据提交（例如图片，文件，音视频等），必须设置数据的提交方式为post,编码类型为&quot;multipart/form-data&quot; |
+例如：</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span> <span class="hljs-attr">method</span>=<span class="hljs-string">""</span> <span class="hljs-attr">enctype</span>=<span class="hljs-string">""</span>&gt;</span>
+	<span class="hljs-comment">&lt;!--此处为表单控件--&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>表单控件使用（重点）
+表单控件用于采集用户信息，可设置以下标签属性</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>取值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>设置控件类型</td>
+</tr>
+<tr>
+<td>name</td>
+<td>设置控件名称，最终与值一并发送给服务器</td>
+</tr>
+<tr>
+<td>value</td>
+<td>设置控件的值</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>设置输入框中的提示文本</td>
+</tr>
+<tr>
+<td>maxlength</td>
+<td>设置输入框中可输入的最大字符数</td>
+</tr>
+<tr>
+<td>checked</td>
+<td>设置单选按钮或复选按钮的默认选中</td>
+</tr>
+<tr>
+<td>selected</td>
+<td>设置下拉菜单的默认选中</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+
+</body>
+</html>

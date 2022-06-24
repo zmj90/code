@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1{
+            position: relative;
+            width: 739px;
+            cursor: pointer;
+        }
+        #l1,#r1{
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+        }
+        #r1{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <img id="l1" src="../imgs/l1-6.png" alt="">
+        <img id="img1" src="../imgs/gm1-6.jpg" alt="">
+        <img id="r1" src="../imgs/r1-6.png" alt="">
+    </div>
+    <script>
+        // 返回指定的url地址
+        function show(i){
+            return "../imgs/gm"+i+"-6.jpg"
+        }
+        // 全局变量
+        var i=1
+        // 左点击切图
+        l1.onclick=function(){
+            i--
+            i==0?i=5:""
+            img1.src=show(i)
+        }
+        // 右移函数
+        function moveRight(){
+            i++
+            i==6?i=1:""
+            img1.src=show(i)
+        }
+        // 右点击切图
+        r1.onclick=moveRight
+        // 循环轮播
+        var timeId=setInterval(moveRight,1500)
+        // 鼠标移入停止切图
+        d1.onmouseover=function(){
+            clearInterval(timeId)
+        }
+        // 鼠标移出继续切图
+        d1.onmouseout=function(){
+            timeId=setInterval(moveRight,1500)
+        }
+    </script>
+</body>
+</html>

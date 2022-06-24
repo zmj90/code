@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格</title>
+    <style>
+        td{width: 80px; height: 25px;}
+        .t1{
+            text-align: center;
+        }
+        .t2{
+            padding-left: 20px;
+            background-color: crimson;
+        }
+        .color_green{
+            background-color: green;
+        }
+        .color_blue{
+            background-color: cyan;
+        }
+        .color_f49{
+            background-color: #f49;
+        }
+        .color_4e8{
+            background-color: #4e8;
+        }
+        b{
+            display: inline-block;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1px" cellspacing="0">
+        <tr>
+            <td colspan="3" class="t2">姓名：</td>
+            <td colspan="3" class="t2">班级：</td>
+        </tr>
+        <tr class="t1 color_green" >
+            <td>星期</td>
+            <td>一</td>
+            <td>二</td>
+            <td>三</td>
+            <td>四</td>
+            <td>五</td>
+        </tr>
+        <tr class="t1">
+            <td rowspan="4" class="color_blue">上<br><br>午</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="6" style="text-align: center;" class="color_f49">午<b></b>休</td>
+        </tr>
+        <tr>
+            <td rowspan="3" class="t1 color_4e8">下<br>午</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

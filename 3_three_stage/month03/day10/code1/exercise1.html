@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script src="../js/data.js"></script>
+</head>
+<body>
+    <form action="">
+        <select name="prov" id="prov"></select>
+        <select name="city" id="city"></select>
+        <select name="area" id="area"></select>
+    </form>
+    <script>
+        console.log($(data))
+        var init="<option value='0'>请选择</option>"
+
+        $("#prov").html(init)
+        $("#city").html(init)
+        $("#area").html(init)
+
+        $.each(data,function(i,obj){
+            $("#prov").append("<option value="+obj.provId+">"+obj.provname+"</option>")
+        })
+
+        $.each(data,function(i,obj){
+            $("#prov").on("change",function(){
+                if($("#prov").val()==obj.provId){
+                    $("#city").html(init)
+                    $("#area").html(init)
+                    $.each(obj.citys,function(i,obj){
+                        $("#city").append("<option value="+obj.cityId+">"+obj.cityname+"</option>")
+                    })
+                }else if($("#prov").val()==0){
+                    $("#city").html(init)
+                    $("#area").html(init)
+                }          
+            })
+        })
+
+        $.each(data,function(i,obj){
+            $.each(obj.citys,function(i,obj){
+                $("#city").on("change",function(){
+                    if($("#city").val()==obj.cityId){
+                        $("#area").html(init)
+                        $.each(obj.areas,function(i,obj){
+                            $("#area").append("<option value="+obj.areaId+">"+obj.areaname+"</option>")
+                        })
+                    }else if($("#city").val()==0){
+                        $("#area").html(init)
+                    }
+                })    
+            })
+        })
+        
+    </script>
+</body>
+</html>

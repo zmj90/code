@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p{
+            width: 200px;
+        }
+        p span{
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="key">
+    <button id="search">Search</button>
+    <p id="show">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque voluptatum soluta quod est optio at pariatur maxime, illo vitae deserunt cupiditate unde cumque totam commodi dignissimos laboriosam sint veritatis praesentium.
+    </p>
+    <script>
+        // 点击搜索框搜索内容  将搜索到的结果用红色字体显示(替换方法)
+        // 如果搜索失败 弹框提示
+        var key = document.getElementById('key');
+        var search = document.getElementById('search');
+        var p = document.getElementById('show');
+        search.onclick = function() {
+            var msg = key.value
+            var reg1 = new RegExp(msg,'ig');
+            console.log(reg1,typeof reg1);
+            if (reg1.test(p.innerHTML)) {
+                var str1 = p.innerHTML.replace(reg1,'<span>' + key.value + '</span>');
+                p.innerHTML = str1;
+            } else {
+                alert('没有该内容。')
+            }
+        }
+    </script>
+</body>
+</html>

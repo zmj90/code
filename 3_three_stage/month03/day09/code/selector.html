@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li.active+li{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="active">白日依山进</li>
+        <li>黄河入海流</li>
+        <li>欲穷千里目</li>
+        <li>更上一层楼</li>
+    </ul>
+    <p>白居易</p>
+    <script src="../js/jquery-3.5.0.js"></script>
+    <script>
+        $('li:not(li:last)').css('color','red');
+        // $('body:not(li:last)').css('color','red');
+
+        // // 找到第一个li添加红色的字体
+        // $('li:first').css('color','red');
+        // // 找到最后一个li 修改字体大小30px
+        // $('li:last').css('font-size','30px');
+
+        // // 找到奇数下标的li设置背景颜色为 pink
+        // $('li:odd').css('background-color','pink');
+        // // 找到偶数下标的li设置背景颜色为 lightblue
+        // $('li:even').css('background-color','lightblue');
+
+        // // 找到欲穷千里目 设置字体颜色红色
+        // $('li:eq(2)').css('color','red');//使用过滤选择器
+        // $('li').eq(2).css('color','red');//使用函数找索引值=2的
+        // // 查找索引值大于1的li元素 设置边框
+        // $('li:gt(1)').css('border','1px solid red');
+        // // 查找索引值小于3的li元素 设置字体居中
+        // $('li:lt(3)').css('text-align','center');
+
+
+
+
+        // 找到.active后的第一个兄弟元素li  设置字体颜色为橘红色
+        // $('li.active + li').css('color','orange');
+        // $('li.active + p').css('color','red');//不是兄弟
+        // $('li.active + li.last').css('color','red')//不是相邻的元素
+
+        // 14:45~15:00
+        // 使用通用兄弟选择器 为li.active后面所有的兄弟添加背景颜色
+        // $('li.active ~ li').css('background-color','pink');
+
+
+        // var items = $('ul>li');
+        // items.css('background-color','pink');
+        // // 清除ul li的内外边距 
+        // $('ul,li').css('padding','0').css('margin','0');
+        // // 清除ul的列表样式list-style
+        // $('ul').css('list-style','none');
+        // // 为带有active的li设置字体颜色为红色
+        // $('li.active').css('color','red');
+    </script>
+</body>
+</html>

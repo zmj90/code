@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+    <style>
+        .d1{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            position: relative;
+            top: 50px;
+            z-index: 999;
+        }
+        .d2{
+            width: 200px;
+            height: 120px;
+            background-color: blueviolet;
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="d1"></div>
+    <div class="d2"></div>
+</body>
+</html>

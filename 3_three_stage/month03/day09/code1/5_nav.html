@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航</title>
+    <style>
+        ul,li{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        .nav{
+            width: 400px;
+            border: 1px solid red;
+        }
+        .nav>li{
+            display: inline-block;
+        }
+        .first{
+            color: #999;
+            margin: 10px; 
+        } /* 09:54~10:05 */
+        .item{
+            margin: 10px 15px;
+            padding: 0 5px;
+            transition: all 0.5s;
+        }
+        .item:hover{
+            background-color: red;
+            color: #fff;
+            cursor: pointer;
+        }
+        .active{
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="first">难度:</li>
+        <li class="item">全部</li>
+        <li class="item">初级</li>
+        <li class="item active">中级</li>
+        <li class="item">高级</li>
+    </ul>
+
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(".item").click(function(){
+            console.log($(this));
+            console.log($(this).addClass("active"));
+            console.log($(this).addClass("active").siblings());
+            console.log($(this).addClass("active").siblings().removeClass("active"));
+            // $(this).addClass("active").siblings().removeClass("active");
+            $(this).toggleClass("active").siblings().removeClass("active");
+
+        })
+    </script>
+    <!-- <script>
+        // 为全部 初级中级高级绑定点击事件  点击li弹框hello
+        var btns = document.getElementsByClassName('item');
+        for(var i=0;i<btns.length;i++){
+            btns[i].onclick = function(){
+                // alert('hello')
+                // 点击按钮为当前按钮添加active类  清除其余按钮的active
+                // 16:47~17:00
+                for(var j=0;j<btns.length;j++){
+                    btns[j].setAttribute('class','item');
+                }
+                this.setAttribute('class','item active');
+                // 遍历btns 找到除当前按钮外的其他按钮 修改class
+                // for(var j=0;j<btns.length;j++){
+                //     if (btns[j] == this){
+                //         continue
+                //     }
+                //     btns[j].setAttribute('class','item');
+                // }
+            }
+        }
+    </script> -->
+</body>
+</html>

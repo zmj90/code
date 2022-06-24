@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text">
+    <button  id='btn' class="btn1">click me</button>
+    <h1 id="show">
+        请输入...
+    </h1>
+    <script>
+        var obj = {name:'QTX',age:18};
+        console.log(obj);
+        console.log(obj.name);
+        var json = {"name1":"QTX","age":18};
+        console.log(json.name1)
+
+        // 9:52~10:05
+        //查找元素
+        var btn = document.getElementsByClassName('btn1')[0];
+        console.log(btn)
+        var text = document.getElementById('text');
+        var show = document.getElementById('show');
+        //当btn被点击时
+        //将input的内容 放入h1中 显示
+        btn.onclick = function(){
+            console.log(show.innerHTML)
+            // 将show的内容变成text的值
+            show.innerHTML = text.value;
+            //清空文本框的值
+            text.value = "";
+        }
+
+        // console.log(btn);
+        // var btn = document.getElementsByTagName('button')[0];
+        // console.log(btn);
+
+        // btn.innerHTML
+        // btn.innerText
+        // text.value
+
+        // btn.setAttribute()
+        // btn.getAttribute()
+        // btn.removeAttribute()
+
+        // function fun(){
+        //     alert('hello')
+        // }
+        // var btn = document.getElementById('btn');//DOM对象
+        // console.log(btn.onclick);
+        // btn.onclick = function(){
+        //     alert('hello')
+        // }
+        // console.log(btn.onclick);
+
+        // btn.onclick = sayHello;
+        // function sayHello(){
+        //     alert('hello world');
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('button').each(function(i,obj){
+                $(obj).on('click',function(){
+                    alert('这是第'+(i+1)+'个按钮')
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>putong de h1</h1>
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+    <button>btn4</button>
+    <button>btn5</button>
+    <script>
+        $(function(){
+            alert('再次执行onload事件')
+        })
+    </script>
+</body>
+</html>

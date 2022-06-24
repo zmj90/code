@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单</title>
+</head>
+<body>
+    <form action="">
+        <p>
+            <!-- label 使用for属性和表单控件的id值关联 -->
+            <label for="uname">姓名: </label>
+            <input type="text" id="uname" name="uname" 
+            placeholder="请输入姓名,不超过10个字符" maxlength="10">
+        </p>
+        <p>
+            <label for="upwd">密码: </label>
+            <input type="password" id="upwd" name="upwd"
+            placeholder="请输入密码">
+        </p>
+        <p>
+            <!-- 单选框 -->
+            <input name="gender" value="1" type="radio">男
+            <input name="gender" value="2" type="radio">女
+            <input name="gender" value="0" type="radio" checked>??
+        </p>
+        <!-- 11:15~11:30 -->
+        <p>
+            <input type="checkbox" name="lq">篮球
+            <input type="checkbox" name="yy">游泳
+            <input type="checkbox" name="sj" checked>睡觉
+        </p>
+        <p>
+            <select name="prov" id="">
+                <option value="0">请选择</option>
+                <option value="1" selected>北京</option>
+                <option value="2">上海</option>
+            </select>
+        </p>
+        <p>
+            头像: <input type="file" name="tx">
+        </p>
+        <p>
+            其他: <textarea name="" id="" ></textarea>
+        </p>
+        <input type="submit">
+        <input type="button" value="普通按钮">
+        <input type="reset">
+    </form>
+</body>
+</html>

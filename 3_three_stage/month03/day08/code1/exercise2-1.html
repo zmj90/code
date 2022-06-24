@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 739px;
+            height: 419px;
+            border: 1px solid red;
+            position: relative;
+        }
+        #img{
+            width: 100%;
+            height: 100%;
+        }
+        #ll,#rr{
+            position:absolute;
+            top: 50%;
+            margin-top:-20px;
+        }
+        #ll{
+            left: 0;
+        }
+        #rr{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img id="ll" src="../imgs/l1-6.png" alt="">
+        <img id="img" src="../imgs/gm1-6.jpg" alt="">
+        <img id="rr" src="../imgs/r1-6.png" alt="">
+    </div>
+    <script>
+        // var ll = document.getElementById('ll');
+        // var img = document.getElementById('img');
+        // console.log(ll);
+        // console.log(img);
+        // console.log(rr);
+        var i = 1;//默认显示第一张图
+        ll.onclick = function(){
+            i--;
+            if(i==0){
+                //如果向左侧没有图片了  将图片改成第五张图
+                i=5;
+            }
+            showimg(i);
+        }
+
+        //实现点击右侧按钮切换图片 1 2 3 4 5 1 2 3 4 5...
+        var toRight = function(){
+            i++;
+            if(i==6){
+                i=1;
+            }
+            showimg(i);
+        }
+        // console.log(rr.src);
+        rr.onclick = toRight;
+        //实现自动向右切换图片  1.5s
+        var timeId = setInterval(toRight,1500);
+        //当鼠标移入到图片或左右按钮时  停止定时器 鼠标移出时 启动定时器
+        // onmouseover移入  onmouseout移出
+        var imgs = document.getElementsByTagName('img');
+        // console.log(imgs);
+        for(var item in imgs){
+            // console.log(imgs[item]);
+            imgs[item].onmouseover = function(){
+                console.log('鼠标移入');
+                clearInterval(timeId);
+            }
+            imgs[item].onmouseout = function(){
+                console.log('鼠标移出');
+                timeId = setInterval(toRight,1500);
+            }
+        }
+        
+        function showimg(i){
+            img.src = '../imgs/gm' + i + '-6.jpg'
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+1. 创建项目的指令
+django-admin startproject 项目名称
+django-admin startproject mysite1
+
+2. 启动服务
+python3 manage.py runserver [[ip]:[端口]]
+
+3. 创建应用app
+python3 manage.py startapp 应用名称
+python3 manage.py startapp music
+
+4. 生成或更新迁移文件
+python3 manage.py makemigrations
+
+5. 执行迁移脚本程序
+python3 manage.py migrate
+
+6. Django shell 的使用
+python3 manage.py shell
+
+7. 创建后台管理帐号
+python3 manage.py createsuperuser
+
+8. 删除已过期的session数据
+python3 manage.py clearsessions
+
+9. 创建缓存表
+python3 manage.py createcachetable

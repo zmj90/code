@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reg</title>
+</head>
+<body>
+    <script>
+        var str = 'this is a test string';
+        // var reg1 = /is/;
+        // console.log(reg1);
+        // var res = reg1.test(str);
+        // console.log(res);
+
+        // var reg2 = /is/ig;
+        // console.log(reg2.test(str));
+        // console.log(reg2.test(str));
+        // console.log(reg2.test(str));
+
+        var reg1 = /is/ig;
+        var res = str.match(reg1);
+        console.log(res);
+        var res = str.replace(reg1,'at');
+        console.log(res);
+        console.log(str);
+        console.log(res);
+    </script>
+</body>
+</html>

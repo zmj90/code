@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test json</title>
+</head>
+<body>
+<script src="/static/js/jquery-1.11.3.js"></script>
+<button onclick="showJson()">showJson</button>
+
+<script>
+     function showJson(){
+
+        /*
+        var obj = {
+
+            "uname": "wangweichao",
+            "age": 18
+        }
+
+
+        console.log("name:" + obj.uname)
+        console.log("age:" + obj.age)*/
+
+
+        //json表达多个对象
+        var json_attr = [
+
+            {
+               "uname": "wangweichao",
+               "age":19
+            },
+
+            {
+               "uname": "guoxiaonao",
+               "age": 18
+
+            }
+        ]
+
+        // jquery v1 循环json数组
+        /*
+        $(json_attr).each(function(i,obj){
+
+            console.log('index:' + i);
+            console.log('uaname:' + obj.uname);
+
+        })*/
+
+        //jquery v2 循环json数组
+        $.each(json_attr, function(i, obj){
+            console.log('index v2:' + i);
+            console.log('uaname v2:' + obj.uname);
+        })
+
+
+     }
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

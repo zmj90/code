@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>display</title>
+    <style>
+        /* 块元素 可以自己指定宽高 不指定宽度时 默认占父元素的100%宽度 不指定高度时,如果也没有内容,元素不可见 */
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        img{
+            width: 600px;
+        }
+        span{
+            width: 200px;
+            height: 200px;
+            background-color: crimson;
+            /* 以块元素方式显示 */
+            display: block;
+            /* display: inline-block; */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <!-- <p>
+        <h1>今天天气不错</h1>
+    </p> -->
+    <span>这是行内元素span</span>
+    <b>哈哈哈哈</b>
+    <img src="../imgs/img01.png" alt="">
+</body>
+</html>

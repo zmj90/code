@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img id="img" src="../imgs/bk0-8.jpg" alt="">
+        <p id="title">
+            JavaScript高级程序设计
+        </p>
+        <script>
+            var arr1 = [
+                'JavaScript高级程序设计',
+                'JavaScript从入门到精通',
+                'JavaScript权威指南',
+                'javaScript DOM编程艺术',
+                'Python学习手册',
+                'HTML5+CSS3+JavaScript从入门到精通',
+                'Python编程从入门到实践',
+                'Python基础教程',
+                'Python从入门到项目实践',
+                '零基础学Python'
+            ]
+            var img = document.getElementById('img');
+            var title = document.getElementById('title');
+            var num = Math.floor(Math.random() * arr1.length);
+            img.src = '../imgs/bk' + num + '-8.jpg'
+            title.innerHTML = arr1[num];
+        </script>
+    </div>
+</body>
+</html>

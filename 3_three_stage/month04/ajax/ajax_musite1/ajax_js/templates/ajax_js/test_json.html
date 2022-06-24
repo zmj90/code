@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test json</title>
+</head>
+<body>
+    <script src="/static/js/jquery-3.5.0.min.js"></script>
+    <button onclick="showJson()">showJson</button>
+    <script>
+        // 单个对象
+        // function showJson() {
+        //     let obj = {
+        //         "uname": "zmj",
+        //         "age": 30
+        //     }
+        //     console.log("name:", obj.uname)
+        //     console.log("age:", obj.age)
+        // }
+        
+        // 多个对象
+        function showJson(){
+            let json_attr = [
+                {
+                    "uname": "qwe",
+                    "age": 28
+                },
+                {
+                    "uname": "asd",
+                    "age": 29
+                }
+            ]
+            $.each(json_attr, function(index, obj){
+                console.log("index:" + index)
+                console.log("name:" + obj.uname)
+                // alert("age:" + obj.age)
+            })
+        }
+    </script>
+</body>
+</html>

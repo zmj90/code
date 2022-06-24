@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 16:47~17:00
+        // 传递一个人名作为参数  向他打招呼
+        // 定义一个函数 接收两个数字作为参数 打印较大的那个数
+        // function sayHello(){
+        //     alert('hello world');
+        // }
+        // sayHello();
+
+        function sayHello(name){
+            alert('你好'+name+',吃了没?')
+        }
+        // sayHello();//name如果没有传值,默认值为undefined
+        // sayHello('laowang');
+
+        function myMax(a,b){
+            // if(a>b){
+            //     console.log(a)
+            // }else{
+            //     console.log(b)
+            // }
+            // console.log(a);//10
+            // console.log(b);//undefined
+            return a>b?a:b;
+        }
+        // myMax(10,20);
+        // myMax(10);
+        var max = myMax(10,20);//undefined
+        console.log(max*2);
+        // lambda
+
+    </script>
+</body>
+</html>

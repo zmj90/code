@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单</title>
+</head>
+<body>
+    <form action="" method="post">
+        <p>
+            姓名: <input name="username" type="text">
+        </p>
+        <p>
+            密码: <input name="password" type="password">
+        </p>
+        <input type="submit" value="登录">
+    </form>
+</body>
+</html>
+<!-- get方式提交数据 将数据以查询字符串的方式拼接到地址栏中,传递给服务器 -->
+<!-- 不安全  会受到地址栏限制(格式,大小) -->
+<!-- ?username=qtx&password=123456 查询字符串 -->
+<!-- ?键=值&键=值&... -->
+
+<!-- post 将数据放在请求体中发送给服务器 -->
+<!-- 相对安全  没有大小和格式限制 -->

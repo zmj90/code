@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select name="prov" id="p1"></select>
+    <select name="city" id="c1"></select>
+    <select name="area" id="a1"></select>
+
+    <script src="../js/jquery-3.5.0.js"></script>
+    <script src="../js/data.js"></script>
+
+    <script>
+        console.log(data)
+        $("select").html("<option value=''>请选择</option>");
+
+        $.each(data,function(i,obj){
+            $("#p1").append("<option value=''>" +obj.provname+ "</option>")
+        })
+
+        console.log($("#p1"));
+        console.log($("#p1")[0][1]);
+        $("#p1").change(function(){
+            
+        })
+
+    </script>
+</body>
+</html>

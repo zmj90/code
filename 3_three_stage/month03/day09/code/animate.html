@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button{
+            width: 60px;
+            height: 40px;
+        }
+        /* img{
+            display: block;
+        } */
+    </style>
+</head>
+<body>
+    <div>
+        <button id="btn">隐藏</button>
+        <button id="btn1">显示</button>
+    </div>
+    <div>
+        <img src="../imgs/gm1-6.jpg" alt="">
+    </div>
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script>
+        // 测试上推下拉(对块元素生效)  淡隐淡现
+        // $('#btn').click(function(){
+        //     $('img').hide(1000);
+        // })
+        // $('#btn1').click(function(){
+        //     $('img').show(1000)
+        // })
+
+        // $("#btn").click(function(){
+        //     $("div:last").slideUp(2000)
+        //     console.log($("div:last"))
+        // })
+        // $("#btn1").click(function(){
+        //     $("div:last").slideDown(1000)
+        //     console.log($("div:last"))
+        // })
+
+        // $("#btn").click(function(){
+        //     $("img").slideUp(2000)
+        //     console.log($("img"))
+        // })
+        // $("#btn1").click(function(){
+        //     $("img").slideDown(1000)
+        //     console.log($("img"))
+        // })
+
+        $("#btn").click(function(){
+            $("img").fadeOut(2000)
+        })
+        $("#btn1").click(function(){
+            $("img").fadeIn(2000)
+        })
+    </script>
+</body>
+</html>

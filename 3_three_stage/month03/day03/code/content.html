@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>盒模型-内容</title>
+    <style>
+        .d1{
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            /* 溢出部分隐藏 */
+            /* overflow: hidden; */
+            /* 自动生成滚动条 */
+            /* overflow: auto; */
+            overflow: scroll;
+        }
+        .d2{
+            width: 200px;
+            height: 200px;
+            border: 20px solid red;
+            /* border-bottom-width:0 ; */
+            /*透明*/
+            border-bottom-color: transparent;
+            /* border-top:2px solid red;
+            border-left:2px solid red;
+            border-right:2px solid red; */
+        }
+        .d3{
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            border-top-color: red;
+            /* border: 50px solid green;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent; */
+        }
+    </style>
+</head>
+<body>
+    <div class="d3"></div>
+    <div class="d2"></div>
+
+    <div class="d1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus maxime consequuntur vel obcaecati repudiandae veniam rerum corporis, ipsa enim animi sed cumque nihil quae quam. Accusamus tempore modi neque culpa?
+    </div>
+</body>
+</html>

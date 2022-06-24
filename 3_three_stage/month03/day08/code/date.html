@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日期对象</title>
+</head>
+<body>
+    <script>
+        var dt = new Date();//当前时间
+        console.log(dt);
+        var wuyi = new Date('2020-05-01 12:00:00');//指定时间
+        console.log(wuyi);
+        var shiyi = new Date('2020/10/01 12:00:00');
+        console.log(shiyi);
+        // 10:50~11:05
+        //getXXX 获取
+        // dt.getFullYear()
+        // dt.getMonth() 月份从0开始计算  0表示1月份..
+        // dt.getDay() 获取星期
+        // dt.getDate() 获取对应月份的天数
+        // dt.getHours()
+        // dt.getMinutes()
+        // dt.getSeconds()
+
+        //setXXX 设置
+        // dt.setFullYear(2000);
+        // console.log(dt);
+
+        //计算时间差
+        // getTime()获取日期对象的总毫秒数
+        var times = wuyi.getTime() - dt.getTime();
+        console.log(times);//毫秒数
+        console.log(wuyi-dt);//毫秒数 
+
+
+
+    </script>
+</body>
+</html>

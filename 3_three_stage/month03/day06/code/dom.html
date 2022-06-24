@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础dom操作</title>
+</head>
+<body>
+    <button class="active">btn1%sdfsdfs</button>
+    <button class='active'>btn2</button>
+    <button class="active">btn3</button>
+    <button>btn4</button>
+    <button>btn5</button>
+    
+    <script>
+        var btns = document.getElementsByTagName('button');
+        // console.log(btns);
+        // // 15:51~16:05
+        // var actives = document.getElementsByClassName('active');
+        // console.log(actives);
+        // for(var i=0;i<actives.length;i++){
+        //     actives[i].onclick = function(){
+        //         //在终端打印当前按钮的内容
+        //         // this 指代调用方法的当前元素
+        //         console.log(this.innerHTML)
+        //     }
+        // }
+
+        // console.log(actives[0].innerHTML)
+        // console.log(actives[0].innerText)
+
+
+
+        // 查看btns  找出所有的button 添加一个点击事件
+        // 当鼠标单击任意按钮时 显示 hello
+        
+        // 点击出现第几个按钮  14:28~14:35
+
+        // 14:51~15:05
+        for(var i=0;i<btns.length;i++){
+            btns[i].onclick = function(i_inner){
+                return function(){
+                    alert('第'+(i_inner+1)+'个按钮')
+                }
+            }(i)
+        }
+        console.log(i)//5
+
+        // for(let i=0;i<btns.length;i++){
+        //     btns[i].onclick =function(){
+        //         alert('第'+(i+1)+'个按钮')
+        //     }
+        // }
+        // console.log(i);//报错  let声明的变量只在当前范围内生效
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq ajax get</title>
+</head>
+<body>
+<script src="/static/js/jquery-1.11.3.js"></script>
+<button id="btn">jq get</button>
+<div id="show"></div>
+
+<script>
+    $(function () {
+        $('#btn').click(function () {
+            $.ajax({
+                url:'/ajax_js/xhr_get_server?name=sf.zh&age=18',
+                type: 'GET',
+                // data: "name=sf.zh&age=18",
+                //     {
+				//     name:"sf.zh",
+				//     age:18
+			    // },
+                success: function (res) {
+                    $('#show').html(res)
+                }
+            })
+        })
+    })
+</script>
+
+</body>
+</html>

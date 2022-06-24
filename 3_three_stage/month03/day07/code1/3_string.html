@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+<body>
+    <div id='text'>This is a test string</div>
+    <button id='btn'>click me</button>
+
+    <script>
+        var btn=document.getElementById('btn');
+        var text=document.getElementById('text');
+        var str=text.innerHTML;
+        // btn.onclick=function(){
+        //     // res=str.toUpperCase();
+        //     // text.innerHTML=res+'转换';
+
+        //     var index=prompt('请输入值：');
+        //     var res=str.charAt(index)+str.charCodeAt(index);
+        //     text.innerHTML=res;
+
+        // }
+
+        // btn.onclick=function(){
+        //     key=prompt('输入内容：');
+        //     if (str.indexOf(key)>0){
+        //         res=str.indexOf(key)
+        //     }else{
+        //         res='没有'
+        //     }
+        //     text.innerHTML=res;
+        // }
+
+        // btn.onclick=function(){
+        //     res=str.substring(0,3);
+        //     text.innerHTML=res
+        // }
+
+            btn.onclick=function(){
+                res=str.split(' ').reverse().join(' ');
+                console.log(res);
+                text.innerHTML=res;
+            }
+
+        // var str = 'laowang';
+        // var str2=new String('zmj');
+        // console.log(str);
+        // console.log(str2);
+        // console.log(typeof str);
+        // console.log(typeof str2);
+
+        // str[0]='q';
+        // console.log(str);
+
+    </script>
+</body>
+</html>

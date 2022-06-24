@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试传参</title>
+</head>
+<body>
+<h3> int 是 {{ int|add:'8' }} </h3>
+<h3> str 是 {{ str|truncatechars:'3' }} </h3>
+<h3> lst 是 {{ lst }} </h3>
+<h3> lst第一个元素是 {{ lst.0 }}</h3>
+<h3> dict 是 {{ zidian }} </h3>
+<h3> dict['name'] 是 {{ zidian.name }}</h3>
+<h3> function 是 {{ say_hi }} </h3>
+<h3> class_obj 是 {{ class_obj.say }} </h3>
+<h3> script 是 {{ script }} </h3>
+
+
+
+
+{% if int > 0 %}
+    <h3>{{ int }}是大于零的</h3>
+{% elif x == 0 %}
+    <h3>{{ int }}是等于零</h3>
+{% endif %}
+
+<h3>for循环演示</h3>
+
+{% for i in lst %}
+
+    {% if forloop.first %}<p>========</p>{% endif %}
+    <p>{{ forloop.revcounter0 }} 名字: {{ i }} </p>
+    {% if forloop.last %}<p>&&&&&&</p>{% endif %}
+
+    {% empty %}
+        <p>对不起，暂时无数据</p>
+
+{% endfor %}
+
+
+
+
+
+</body>
+</html>

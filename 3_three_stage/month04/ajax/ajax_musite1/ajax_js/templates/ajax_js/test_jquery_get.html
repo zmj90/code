@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery ajax get</title>
+</head>
+<body>
+    <script src="/static/js/jquery-3.5.0.min.js"></script>
+    <button id="btn">jquery get</button>
+    <div id="show"></div>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                $.ajax({
+                    url:"/ajax_js/xhr_get_server",
+                    type: "GET",
+                    success: function (res) {
+                        $("#show").html(res)
+                    }
+                })
+            })
+        })
+
+    </script>
+</body>
+</html>

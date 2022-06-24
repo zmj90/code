@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我</button>
+    <script>
+        //声明提前
+        //变量声明提前 会将变量名拿到最上方 值留在原地
+        //function声明的函数在提前时 会 携带函数体
+        console.log(btn,fun,fun2);
+        // fun()报错
+        // fun2()
+        var btn = document.getElementById('btn');
+        btn.onclick = function(){
+            fun()
+        }
+        console.log(btn)
+        var fun = function(){
+            alert('这是一个匿名函数')
+        }
+        // fun()
+        console.log(fun)
+
+        // var a = 1;//全局变量
+        function fun2(){
+            // var a = 10;//局部变量
+            a = 10;//全局变量
+            alert(a);//10
+        }
+        console.log(fun2)
+        // fun2();
+        // alert(a);//10
+    </script>
+</body>
+</html>

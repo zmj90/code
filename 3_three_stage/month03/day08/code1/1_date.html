@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+</head>
+<body>
+    <script>
+        var dt = new Date();
+        console.log(dt);
+        // var wy = new Date('2020/5/1');
+        var wy = new Date('May 1 2020');
+        console.log(wy);
+        var sy = new Date('2020-10-01');
+        console.log(sy);
+
+        // console.log(typeof dt.getFullYear());
+        // dt.getDate();
+
+        var times = wy.getTime() - dt.getTime();
+        console.log(times);
+        console.log(wy - dt);
+        
+    </script>
+</body>
+</html>

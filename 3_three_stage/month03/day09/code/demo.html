@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1"></div>
+    <div class="active">div.active</div>
+    <p class="active">p.active</p>
+    <h1 class="active">h1.active</h1>
+    <!-- <script src="../js/jquery-1.11.3.js"></script> -->
+    <!-- <script src="../js/jquery-1.12.4.js"></script> -->
+    <!-- <script src="../js/jquery-2.2.4.js"></script> -->
+    <script src="../js/jquery-3.5.0.js"></script>
+    <script>
+        var $divs = $('div');//标签
+        console.log($divs);
+        var $elems = $('div,p,h1');//群组选择器
+        console.log($elems);
+
+        // var $d1 = $('#d1');
+        // console.log($d1);//jquery对象
+
+        // var $items = $('.active');
+        // console.log($items);
+        // $items.click(function(){
+        //     alert('hello')
+        // })
+
+        // // 为每一个带有active类的元素绑定鼠标单击事件  点击弹出提示框
+        // for(var i=0;i<$items.length;i++){
+        //     $items[i].onclick = function(){
+        //         alert('hello')
+        //     }
+        // }
+
+        // 通过jquery 尝试使用 class 和 tagName查找页面元素
+        // var d1 = document.getElementById('d1');//DOM 对象
+        // console.log(d1)
+        // DOM对象可以使用DOM 提供的一系列操作 如 xx.innerHTML  xxx.onclick
+        // setAttribute()  ...
+
+        //jQuery对象只能使用jQuery提供的方法和属性
+
+        // jq --> dom
+        // console.log($d1[0])
+
+        // dom --> jq
+        // console.log($(d1))
+
+        // var d1 = document.getElementById('d1');
+        // function $$(id){
+        //     return document.getElementById(id);
+        // }
+
+        // var d1 = $$('d1');
+        // console.log(d1)
+    </script>
+</body>
+</html>

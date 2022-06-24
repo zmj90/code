@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航</title>
+    <style>
+        ul,li{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        .nav{
+            width: 400px;
+            border: 1px solid red;
+        }
+        .nav>li{
+            display: inline-block;
+        }
+        .first{
+            color: #999;
+            margin: 10px; 
+        } 
+        .item{
+            margin: 10px 15px;
+            padding: 0 5px;
+        }
+        .item:hover{
+            background-color: red;
+            color: #fff;
+            cursor: pointer;
+            transition: all 1s;
+        }
+        /* .active{
+            background-color: red;
+            color: #fff;
+        } */
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="first">难度:</li>
+        <li class="item">全部</li>
+        <li class="item">初级</li>
+        <li class="item active">中级</li>
+        <li class="item">高级</li>
+    </ul>
+    <script>
+        var items=document.getElementsByClassName('item');
+        for(i=0;i<4;i++){
+            items[i].onclick=function(){
+                // alert('hello')
+                this.setAttribute('class','item active')
+            }
+        }
+    </script>
+</body>
+</html>

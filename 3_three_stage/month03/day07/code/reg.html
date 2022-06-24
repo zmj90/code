@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式匹配</title>
+</head>
+<body>
+    <script>
+        // 定义正则表达式对象
+        var reg1 = /is/;
+        console.log(reg1,typeof reg1);
+        var reg2 = new RegExp('this');
+        console.log(reg2);
+
+        // var str = 'This is a test string';
+        // // 检测str中有没有符合reg1规范的内容
+        // var res = reg1.test(str); //布尔值
+        // // console.log(res);
+        // console.log(reg2.test(str));
+
+        // var str = 'This is a test string';
+        // var reg = /this/ig;
+        // 修饰符i在匹配时忽略大小写  修饰符g在匹配时全局查找(默认只找到一个就结束 全局查找找全部匹配的内容) 
+        // var reg = new RegExp('is','ig');
+        // // console.log(reg.lastIndex);//0
+        // console.log(reg.test(str));
+        // // console.log(reg.lastIndex);//4
+        // console.log(reg.test(str));
+        // // console.log(reg.lastIndex);//7
+        // reg.lastIndex = 0;//重置下次起始索引
+        // console.log(reg.test(str));
+
+        // 16:50~17:05
+        // var str = 'This is a test string';
+        // var reg = /is/g;
+        // var res = str.match(reg);
+        // console.log(res);
+        // var res = str.replace(reg,'at');
+        // console.log(res);
+        // console.log(str);
+
+        // var res = str.match('this');
+        // console.log(res);
+
+
+    </script>
+</body>
+</html>

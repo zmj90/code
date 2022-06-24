@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test_post</title>
+</head>
+<body>
+<script src="/static/js/jquery-1.11.3.js"></script>
+<script>
+    $(function(){
+
+        $('#btn').click(function(){
+
+            $.ajax({
+                // url: 'http://localhost:8000/ajax_js/test_post_server',
+                url: '/ajax_js/test_post_server',
+                type: 'POST',
+                data: {
+                    uname: $('#uname').val(),
+                    csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
+                },
+                dataType: "jsonp",
+                success: function(res){
+                    alert(res)
+                }
+            })
+
+        })
+    })
+</script>
+{% csrf_token %}
+<p>
+    <input type="text" id="uname">
+</p>
+<p>
+    <button id="btn">提交</button>
+</p>
+</body>
+</html>
+

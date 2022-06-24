@@ -1,0 +1,16 @@
+***今日剩余PPT内容放在md文档末尾,请提前预习
+
+各位02班的小伙伴下午好,14点准时上课
+今日主要内容:
+    1.WEB简介
+    2.HTML语法及页面结构
+    3.HTML文本标签
+    4.HTML结构标签
+
+今天的笔记上传到ftp://code.tarena.com.cn/04_month03/day01/中,请各位小伙伴提前下载~
+
+QQ:1311794174
+email:shibw@tedu.cn
+
+前端 HTML CSS JavaScript
+后端 Django AJAX

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>enter_email</title>
+</head>
+<body>
+    <form action="http://127.0.0.1:8000/user/send/" method="POST">
+        {% csrf_token %}
+        <h2>输入验证邮箱</h2>
+        <table>
+            <tr>
+                <td>邮箱</td>
+                <td>
+                    <input type="text" name="user_email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <button type="submit">发送</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

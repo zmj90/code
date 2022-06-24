@@ -1,0 +1,14 @@
+python 的官方文档：https://docs.python.org/zh-cn/3/
+
+编程语言线上测试链接：http://www.dooccn.com/python3/
+
+计算机编程语言排行榜ITOBE：https://www.tiobe.com/tiobe-index/
+
+教学环境下载地址：http://tedu.weimingze.com/static/python/aid_linux_virtual_env.html
+
+windows系统Python解释器安装教程：https://blog.csdn.net/qq_19394437/article/details/107285911
+
+windows系统Pycharm编辑器安装教程：
+https://blog.csdn.net/qq_19394437/article/details/107283331
+
+pycharm专业版激活网站：https://idea.medeming.com/jets/

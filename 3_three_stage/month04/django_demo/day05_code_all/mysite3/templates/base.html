@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block mytitle %}
+    <title>父模板</title>
+    {% endblock %}
+</head>
+
+{{ lst }}
+
+<body>
+<a href="/test_music">音乐频道</a>
+<a href="{% url 'mus' %}">音乐频道[反向解析]</a>
+<a href="{% url 'pag' '300' %}">测试pagn传参</a>
+
+<br>
+<br>
+<br>
+{% block info %}
+    这是父模板呦
+{% endblock %}
+<br>
+<br>
+<br>
+<h3>有问题请致电 400-000-000</h3>
+
+</body>
+</html>

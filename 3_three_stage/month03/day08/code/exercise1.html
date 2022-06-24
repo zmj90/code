@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>倒计时</title>
+    <style>
+        div{
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>nihao</h1>
+        <span id="h">00</span>
+        :
+        <span id="m">00</span>
+        :
+        <span id="s">00</span>
+    </div>
+    <script>
+        // 16:23~16:33
+        // 显示从当前时间到18:00的倒计时
+
+        // 定义补0的函数  字符串
+        function addZero(num){
+           return num<10?'0'+num:num+''
+        }
+        // 获取当前时间对象和18:00的时间对象  16:54~17:10
+
+        function countDown(){
+            var now = new Date();
+            var target = new Date('2020-5-1 18:00:00');
+            // 计算时间差 (毫秒数) --> 秒 取整数
+            var times = parseInt((target - now)/1000);
+            if(times<=0){
+                alert('已超过预订时间')
+                clearInterval(timer);
+                return;//退出函数
+            }
+            // 将算到的时间差转换成时分秒 分别放入页面h m s中显示
+            var h = parseInt(times/3600);
+            var m = parseInt(times/60 % 60);
+            var s = parseInt(times % 60);
+            var hour = document.getElementById('h');
+            var minute = document.getElementById('m');
+            var sec = document.getElementById('s');
+            hour.innerHTML = addZero(h);
+            minute.innerHTML = addZero(m);
+            sec.innerHTML = addZero(s);
+        }
+        var timer = setInterval(countDown,1000);
+    </script>
+</body>
+</html>

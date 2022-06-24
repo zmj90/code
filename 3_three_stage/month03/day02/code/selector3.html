@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择器优先级</title>
+    <style>
+        div{color: red}  /*1*/
+        .div1{color: orange} /*10*/
+        #d1{ /*100*/
+            color: green;
+        }
+        p{/*1*/
+            font-size: 30px;
+        }
+        .div1 p{/*10+1*/
+            font-size: 60px;
+        }
+        div,.div1,p{
+            font-size:15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1" class="div1">
+        nihao nihao 
+        <p>
+            inner text
+        </p>
+    </div>
+</body>
+</html>

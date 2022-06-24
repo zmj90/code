@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 739px;
+            height: 419px;
+            border: 1px solid red;
+            position: relative;
+        }
+        #img{
+            width: 100%;
+            height: 100%;
+        }
+        #ll,#rr{
+            position:absolute;
+            top: 50%;
+            margin-top:-20px;
+        }
+        #ll{
+            left: 0;
+        }
+        #rr{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id='d1'>
+        <img id="ll" src="../imgs/l1-6.png" alt="">
+        <img id="img" src="../imgs/gm1-6.jpg" alt="">
+        <img id="rr" src="../imgs/r1-6.png" alt="">
+    </div>
+    <script>
+        var i = 1;
+        ll.onclick = function(){
+            i--;
+            i==0?i=5:""
+            showimg(i);
+        }
+        function toRight(){
+            i++;
+            i==6?i=1:""
+            showimg(i);
+        }
+        rr.onclick = toRight;
+        var timeId = setInterval(toRight,1500);
+        d1.onmouseover = function(){
+            clearInterval(timeId);
+        }
+        d1.onmouseout = function(){
+            timeId = setInterval(toRight,1500);
+        }
+        function showimg(i){
+            img.src = '../imgs/gm' + i + '-6.jpg'
+        }
+    </script>
+</body>
+</html>

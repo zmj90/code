@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跨域</title>
+</head>
+<body>
+
+<button id="btn">跨域请求</button>
+<script src="/static/js/jquery-1.11.3.js"></script>
+<script>
+    //跨域使用的预留函数
+    function print(data){
+        console.log(data)
+    }
+    $(function(){
+        $('#btn').click(function(){
+            //jsonp 方案1
+            $.ajax({
+              url: 'http://localhost:8000/ajax_js/cross_server',
+              type: 'GET',
+              dataType: 'jsonp',
+              jsonp: 'callback',
+              jsonpCallback: 'print'
+            })
+            /*
+            $.ajax({
+              url: 'http://localhost:8000/ajax_js/cross_server',
+              type: 'GET',
+              dataType: 'jsonp',
+              success: function(res){
+                console.log('---jq--super')
+                console.log(res)
+              }
+            }) */
+        })
+    })
+</script>
+</body>
+</html>

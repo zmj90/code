@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>all_book</title>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <td>id</td>
+            <td>title</td>
+            <td>pub</td>
+            <td>price</td>
+            <td>market_price</td>
+            <td>op</td>
+        </tr>
+        {% for item in books %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.title }}</td>
+                <td>{{ item.pub }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.market_price }}</td>
+                <td><a href="/bookstore/update_book/{{ item.id }}">更新</a>
+                    <a href="/bookstore/delete_book/{{ item.id }}">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

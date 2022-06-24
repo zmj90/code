@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒模型</title>
+    <style>
+        #d1{
+            width: 200px;
+            height: 100px;
+            background-color: hotpink;
+            overflow: auto;
+        }
+        .d2{
+            width: 200px;
+            height: 200px;
+            border: 30px solid red;
+            border-bottom-color: transparent;
+        }
+        .d3{
+            width: 0;
+            height: 0;
+            /* border: 30px solid transparent;
+            border-top-color: red; */
+            border-top: 30px solid blue;
+            border-left: 90px solid transparent;
+            border-right: 60px solid transparent;
+            /* border-bottom: ; */
+        }
+    </style>
+</head>
+<body>
+    <!-- div#d1 -->
+    <div id="d1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, illo repellat nobis eaque illum quod eos ipsum, earum quasi hic, assumenda cum eveniet facere magni? Neque perferendis non provident beatae.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos autem quaerat assumenda architecto sint deleniti, voluptatem saepe dolorum magnam sequi ea nesciunt quis iure velit voluptate culpa eius, minus omnis.
+    </div>
+    <!-- div.d2 -->
+    <div class="d2"></div>
+    <!-- div.d3 -->
+    <div class="d3"></div>
+</body>
+</html>
