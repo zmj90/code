@@ -12,9 +12,11 @@
                 （可以集中精力设计／组织／指挥多个类协同工作）
 """
 
+
 # 使用方法，封装变量.
 class Wife:
     a = 1
+
     def __init__(self, name, age, weight):
         self.name = name
         # 本质:障眼法(实际将变量名改为：_类名__age)
@@ -43,6 +45,7 @@ class Wife:
         else:
             raise ValueError("我不要")
 
+
 """
 w01 = Wife("铁锤公主", 87, 87)
 # 重新创建了新实例变量(没有改变类中定义的__age)
@@ -58,4 +61,3 @@ w01.set_weight(55)
 print(w01.get_age())
 print(w01.get_weight())
 print(w01.__dict__)
-

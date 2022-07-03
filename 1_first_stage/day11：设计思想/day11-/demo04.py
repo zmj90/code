@@ -36,7 +36,7 @@ class Wife:
     age = property(get_age, set_age)
 
 
-w01 = Wife("双儿", 20)
+w01 = Wife("双儿", 31)
 print(w01.name)
 w01.age = 26
 print(w01.age)
