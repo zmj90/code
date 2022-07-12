@@ -1,0 +1,12 @@
+房源信息管理系统
+一、正确导入相关文件
+    将文件夹house_information_manager_system拷贝到Pycharm工程中
+    标记项目根目录
+
+二、搭建MVC架构
+三、按1键显示所有房源信息
+
+
+三、按2键显示房价最高的信息
+-- max(列表)  重写Model的__gt__
+-- max(列表,key = lambda)

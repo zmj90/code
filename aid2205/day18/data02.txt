@@ -1,0 +1,1 @@
+CommodityModel("屠龙刀",10000,101)
